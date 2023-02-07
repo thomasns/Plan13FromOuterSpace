@@ -24,13 +24,13 @@ public class KeplerianElementServiceImpl implements KeplerianElementService{
     @Override
     public Set<KeplerianElements> getElementsBySatellite(Satellite satellite) {
         log.debug("Searching for all Keps by Satellite");
-        Set<KeplerianElements> keps = keplerianElementRepository.findBySatelliteID(satellite.getSatelliteId());
+        Set<KeplerianElements> keps = keplerianElementRepository.findBySatelliteId(satellite.getId());
         return keps;
     }
 
     @Override
     public KeplerianElements findMostRecentBySatellite(Satellite satellite) {
-
+       // KeplerianElements kep
         throw new RuntimeException("Not yet implemented");
     }
 }

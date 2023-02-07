@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Satellites Tracked</title>
+</head>
+<body>
+<h1>Satellites Tracked</h1>
+
+<table>
+    <tr>
+        <th>Satellite Name</th>
+        <th>Norad ID</th>
+        <th>International ID</th>
+    </tr>
+    <tr th:each="satellite : ${satellites}">
+        <td th:text="${satellite.getName()}"></td>
+        <td th:text="${satellite.getId()}"></td>
+        <td th:text="${satellite.getInternationalDesignation()}"></td>
+    </tr>
+</table>
+
+</body>
+</html>

@@ -1,9 +1,10 @@
 package io.thomasns.Plan13FromOuterSpace.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.Set;
 
 @Getter
 @Setter
@@ -11,8 +12,11 @@ import lombok.Setter;
 public class Satellite {
 
     @Id
-    private Integer satelliteId;
-    private String satelliteName;
+    private Integer id;
+    private String name;
     private String internationalDesignation;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy="satellite")
+    private Set<KeplerianElements> keplerianElementsSet;
 
 }
