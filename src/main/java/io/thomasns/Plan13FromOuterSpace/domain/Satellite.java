@@ -18,5 +18,7 @@ public class Satellite {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy="satellite")
     private Set<KeplerianElements> keplerianElementsSet;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy="satellite")
+    private Set<Transmitter> transmitterSet;
 
 }

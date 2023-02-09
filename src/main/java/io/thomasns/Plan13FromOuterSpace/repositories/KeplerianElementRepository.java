@@ -11,7 +11,6 @@ public interface KeplerianElementRepository extends CrudRepository<KeplerianElem
 
     Set<KeplerianElements> findBySatelliteId(Integer satelliteId);
 
-    //@Query(value = "SELECT * FROM keplerian_elements where EPOCH = (select max(epoch) from keplerian_elements where satellite_id = :#{#satellite})", nativeQuery = true )
     @Query(value = "SELECT * FROM keplerian_elements where EPOCH = (select max(epoch) from keplerian_elements where satellite_id = ?1)", nativeQuery = true )
     KeplerianElements findMostRecentKeplerianElementsForSatellite(Integer satelliteId);
 }
